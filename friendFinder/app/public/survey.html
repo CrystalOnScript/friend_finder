@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Friend Finder Home</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <div class="container">
+    <div class="row" id="surveyDiv">
+      <h1>Friendly Questions</h1>
+      <hr>
+      <form id="surveyForm">
+        <div class="form-group">
+          <h3><strong>About You</strong></h3>
+          <label for="nameEnter">What would you like to be called? (Required)</label>
+          <input type="text" class="form-control" id="nameEnter" aria-describedby="nameHelp" placeholder="Your Name">
+          <small id="nameHelp" class="form-text text-muted">Real name, nick name, desired name, we take em all!</small>
+        </div>
+        <div class="form-group">
+          <label for="photoURL">What do you look like? (Required)</label>
+          <input type="text" class="form-control" aria-describedby="photoHelp" id="photoURL" placeholder="Photo URL">
+          <small id="photoHelp" class="form-text text-muted">Give us a link to a photo of you!</small>
+        </div>
+        <hr>
+        <div class="form-group">
+          <label for="questionOne"><h3>Question 1</h3></label>
+          <p>I really, REALLY like cats!</p>
+          <select class="form-control widthControl" id="questionOne">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="questionTwo"><h3>Question 2</h3></label>
+          <p>I need coffee to live.</p>
+          <select class="form-control widthControl" id="questionTwo">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="questionThree"><h3>Question 3</h3></label>
+          <p>I believe in dinosaurs.</p>
+          <select class="form-control widthControl" id="questionThree">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="questionFour"><h3>Question 4</h3></label>
+          <p>Ice Cream is my favorite food group.</p>
+          <select class="form-control widthControl" id="questionFour">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="questionFive"><h3>Question 5</h3></label>
+          <p>Camping if the perfect vation option.</p>
+          <select class="form-control widthControl" id="questionFive">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="questionSix"><h3>Question 6</h3></label>
+          <p>I enjoy listening to others!</p>
+          <select class="form-control widthControl" id="questionSix">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="questionSeven"><h3>Question 7</h3></label>
+          <p>I prefer sweet to savory.</p>
+          <select class="form-control widthControl" id="questionSeven">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="questionEight"><h3>Question 8</h3></label>
+          <p>I actively try to be environmentally conscious.</p>
+          <select class="form-control widthControl" id="questionEight">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="questionNine"><h3>Question 9</h3></label>
+          <p>The more the merrier!</p>
+          <select class="form-control widthControl" id="questionNine">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="questionTen"><h3>Question 10</h3></label>
+          <p>I never met a puppy I didn't want to pet.</p>
+          <select class="form-control widthControl" id="questionTen">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" id="surveySubmit">FIND MY FRIEND!</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+  	// In this code below we create the Front-end Javascript which "POSTS" our form data to our express server.
+  	// In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+  	// Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+  	// In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+  $("#surveySubmit").on("click", function(){
+    event.preventDefault();
+  		// Here we grab the form elements
+      var q1v = $('#questionOne').val();
+      var q2v = $('#questionTwo').val();
+      var q3v = $('#questionThree').val();
+      var q4v = $('#questionFour').val();
+      var q5v = $('#questionFive').val();
+      var q6v = $('#questionSix').val();
+      var q7v = $('#questionSeven').val();
+      var q8v = $('#questionEight').val();
+      var q9v = $('#questionNine').val();
+      var q10v = $('#questionTen').val()
+
+  		var newFriend = {
+  			friendName: $('#nameEnter').val().trim(),
+  			photoURL: $('#photoURL').val().trim(),
+  			questionArray: [parseFloat(q1v), parseFloat(q2v), parseFloat(q3v), parseFloat(q4v), parseFloat(q5v), parseFloat(q6v), parseFloat(q7v), parseFloat(q8v), parseFloat(q9v), parseFloat(q10v)],
+  		};
+
+  		console.log(newFriend);
+
+  function postData(){
+      var currentURL = window.location.origin;
+
+
+      }
+  function resetForm(){
+        $('#nameEnter').val(" ");
+  			$('#photoURL').val(" ");
+        $('.widthControl').val(" ");
+      }
+    var testVal = $('.widthControl').val();
+    var nameEntered = $('#nameEnter').val();
+    var urlEntered = $('#photoURL').val();
+    if(testVal === null || nameEntered<3 || urlEntered<10){
+        alert("Please Enter All Values")
+      }else{
+        $.post(`${currentURL}/api/friends`, newFriend).done(function(req, res){
+
+              console.log("req is "+req);
+
+              console.log("res " +res);
+          });
+        resetForm();
+      }
+
+  return false;
+
+  });
+
+  </script>
+
+</body>
+</html>
