@@ -182,6 +182,8 @@
 
   <script type="text/javascript">
 
+  require('./app/routing/apiRoutes.js')(app);
+  require('./app/routing/htmlRoutes.js')(app);
   $("#surveySubmit").on("click", function(){
 
   		// Here we grab the form elements
