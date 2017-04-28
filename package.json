@@ -1,17 +1,10 @@
 {
   "name": "friend_finder",
   "version": "1.0.0",
-  "description": "app that picks best friend from array based on user inputs ",
+  "description": "find friends",
   "main": "server.js",
-  "dependencies": {
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
