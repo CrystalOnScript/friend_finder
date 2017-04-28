@@ -5,7 +5,7 @@ var path = require("path");
 var friendCompare = require("./app/data/friends.js")
 
 var app = express();
-// var PORT = 3002;
+var port = process.env.PORT || 8000
 
 
 app.use(bodyParser.json());
@@ -92,6 +92,6 @@ app.get("/survey", (req, res) => {
 
 app.use(express.static("app/public"));
 
-// app.listen(PORT, function() {
-//   console.log("App listening on PORT " + PORT);
-// });
+app.listen(port, function() {
+    console.log("App is running on port " + port);
+});
