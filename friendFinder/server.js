@@ -1,5 +1,4 @@
-// Dependencies
-// =============================================================
+
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
@@ -8,7 +7,7 @@ var friendCompare = require("./app/data/friends.js")
 var app = express();
 var PORT = 3002;
 
-// Sets up the Express app to handle data parsing
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
@@ -81,13 +80,11 @@ app.get("/survey", (req, res) => {
         console.log(characterArray[i])
         bestMatch = characterArray[i]
         res.json(bestMatch);
-        // bestMatchTest.push(bestMatch);
       }
 
     }
     friendCompare.push(friendPush);
     console.log("friend compare "+friendCompare);
-    // console.log(`reservations: ${reservations}`);
 
   });
 
@@ -95,9 +92,6 @@ app.get("/survey", (req, res) => {
 
 app.use(express.static("app/public"));
 
-
-// Starts the server to begin listening
-// =============================================================
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
