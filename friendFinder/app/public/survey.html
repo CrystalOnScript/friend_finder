@@ -16,6 +16,8 @@
 
 </head>
 <body>
+
+</div>
   <div class="container">
     <div class="row" id="surveyDiv">
       <h1>Friendly Questions</h1>
@@ -153,20 +155,26 @@
             <option value=5>5 (Strongly Disagree)</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary" id="surveySubmit">FIND MY FRIEND!</button>
+
+        <button type="submit" class="btn btn-primary" id="surveySubmit">Reveal Friend</button>
+
       </form>
+    </div>
+    <div class="row" id="friendDiv">
+      <h1>New Friend!</h1>
+      <h2 id="displayThis"></h2>
+      <div id="displayThisToo"></div>
     </div>
   </div>
 
-  <script type="text/javascript">
 
-  	// In this code below we create the Front-end Javascript which "POSTS" our form data to our express server.
-  	// In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-  	// Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-  	// In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+  <script type="text/javascript">
 
   $("#surveySubmit").on("click", function(){
     event.preventDefault();
+
+
+    $("#myModal").css("display", "block");
   		// Here we grab the form elements
       var q1v = $('#questionOne').val();
       var q2v = $('#questionTwo').val();
@@ -187,11 +195,9 @@
 
   		console.log(newFriend);
 
-  function postData(){
-      var currentURL = window.location.origin;
 
+  var currentURL = window.location.origin;
 
-      }
   function resetForm(){
         $('#nameEnter').val(" ");
   			$('#photoURL').val(" ");
@@ -203,11 +209,15 @@
     if(testVal === null || nameEntered<3 || urlEntered<10){
         alert("Please Enter All Values")
       }else{
-        $.post(`${currentURL}/api/friends`, newFriend).done(function(req, res){
+        $.post(`${currentURL}/api/friends`, newFriend).done(function(response){
 
-              console.log("req is "+req);
+              var picURL = response.url
+              console.log(response);
+              $("#surveyDiv").append("<div>")
+              $("#displayThis").text(response.name);
+              $("#displayThisToo").html("<img height='300px' src='"+picURL+"'/>");
+              // $("#viewFriend").css("display","inline");
 
-              console.log("res " +res);
           });
         resetForm();
       }

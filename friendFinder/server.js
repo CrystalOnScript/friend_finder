@@ -5,10 +5,6 @@ var bodyParser = require("body-parser");
 var path = require("path");
 var friendCompare = require("./app/data/friends.js")
 
-
-
-// Sets up the Express App
-// =============================================================
 var app = express();
 var PORT = 3002;
 
@@ -22,22 +18,10 @@ app.use(bodyParser.json({
   type: "application/vnd.api+json"
 }));
 
-// =============================================================
+
 var friends = [];
-// {
-//   friendName: "Test",
-//   photoURL: "https://i.imgur.com/fapzxbr.jpg",
-//   questionArray: [3,3,3,3,3,3,3,3,3,3]
-// }
 
-
-
-// Routes
-// =============================================================
-
-// Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-  // res.send("Welcome to the Star Wars Page!")
     return res.sendFile(path.join(__dirname, "app/public/home.html"));
 });
 
@@ -51,6 +35,7 @@ app.post("/api/friends", function(req, res) {
   console.log(`friendPush: ${JSON.stringify(friendPush)}`);
   var bestMatchTest = [];
   friends.push(friendPush);
+  console.log(friends)
 
   function add(a, b) {
       return a + b;
@@ -90,13 +75,14 @@ app.post("/api/friends", function(req, res) {
     if(characterArray[i].sum === minimum){
       console.log(characterArray[i])
       bestMatch = characterArray[i]
+      res.json(bestMatch);
+      // bestMatchTest.push(bestMatch);
     }
 
   }
   friendCompare.push(friendPush);
   console.log("friend compare "+friendCompare);
   // console.log(`reservations: ${reservations}`);
-  return res.json(bestMatchTest);
 
 });
 
