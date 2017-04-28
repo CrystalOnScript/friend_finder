@@ -2,7 +2,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
-var friendCompare = require("./app/data/friends.js")
+
 
 var app = express();
 var port = process.env.PORT || 8000
@@ -17,7 +17,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({
   type: "application/vnd.api+json"
 }));
-
+app.use(express.static("app/public"));
 
 require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
@@ -25,7 +25,7 @@ require('./app/routing/htmlRoutes.js')(app);
 
 
 
-app.use(express.static("app/public"));
+
 
 app.listen(port, function() {
     console.log("App is running on port " + port);

@@ -1,11 +1,12 @@
 const path = require('path');
-
+var friends = [];
+var friendCompare = require("../data/friends.js")
 module.exports = app => {
 
   app.get("/api/friends", (req, res) => {
       return res.json(friendCompare);
   });
-var friends = [];
+
   app.post("/api/friends", function(req, res) {
     var friendPush = req.body;
     console.log(`params: ${req}`);
