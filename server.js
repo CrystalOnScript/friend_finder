@@ -6,8 +6,7 @@ var friendCompare = require("./app/data/friends.js")
 
 var app = express();
 var port = process.env.PORT || 8000
-require('./app/routing/apiRoutes.js')(app);
-require('./app/routing/htmlRoutes.js')(app);
+
 
 
 app.use(bodyParser.json());
@@ -20,15 +19,8 @@ app.use(bodyParser.json({
 }));
 
 
-
-
-// app.get("/", function(req, res) {
-//     return res.sendFile(path.join(__dirname, "app/public/home.html"));
-// });
-//
-// app.get("/survey", (req, res) => {
-//     return res.sendFile(path.join(__dirname, "app/public/survey.html"));
-// });
+require('./app/routing/apiRoutes.js')(app);
+require('./app/routing/htmlRoutes.js')(app);
 
 
 
