@@ -16,26 +16,45 @@
 
 </head>
 <body>
+  <div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">New Friend!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
 
+          <h2 id="displayThis"></h2>
+          <div id="displayThisToo"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
   <div class="container">
     <div class="row" id="surveyDiv">
       <h1>Friendly Questions</h1>
       <hr>
-      <form id="surveyForm">
-        <div class="form-group">
+      <!-- <form id="surveyForm"> -->
+        <div>
           <h3><strong>About You</strong></h3>
           <label for="nameEnter">What would you like to be called? (Required)</label>
           <input type="text" class="form-control" id="nameEnter" aria-describedby="nameHelp" placeholder="Your Name">
           <small id="nameHelp" class="form-text text-muted">Real name, nick name, desired name, we take em all!</small>
         </div>
-        <div class="form-group">
+        <div>
           <label for="photoURL">What do you look like? (Required)</label>
           <input type="text" class="form-control" aria-describedby="photoHelp" id="photoURL" placeholder="Photo URL">
           <small id="photoHelp" class="form-text text-muted">Give us a link to a photo of you!</small>
         </div>
         <hr>
-        <div class="form-group">
+        <div>
           <label for="questionOne"><h3>Question 1</h3></label>
           <p>I really, REALLY like cats!</p>
           <select class="form-control widthControl" id="questionOne">
@@ -47,7 +66,7 @@
             <option value=5>5 (Strongly Disagree)</option>
           </select>
         </div>
-        <div class="form-group">
+        <div>
           <label for="questionTwo"><h3>Question 2</h3></label>
           <p>I need coffee to live.</p>
           <select class="form-control widthControl" id="questionTwo">
@@ -59,7 +78,7 @@
             <option value=5>5 (Strongly Disagree)</option>
           </select>
         </div>
-        <div class="form-group">
+        <div>
           <label for="questionThree"><h3>Question 3</h3></label>
           <p>I believe in dinosaurs.</p>
           <select class="form-control widthControl" id="questionThree">
@@ -71,7 +90,7 @@
             <option value=5>5 (Strongly Disagree)</option>
           </select>
         </div>
-        <div class="form-group">
+        <div>
           <label for="questionFour"><h3>Question 4</h3></label>
           <p>Ice Cream is my favorite food group.</p>
           <select class="form-control widthControl" id="questionFour">
@@ -83,7 +102,7 @@
             <option value=5>5 (Strongly Disagree)</option>
           </select>
         </div>
-        <div class="form-group">
+        <div>
           <label for="questionFive"><h3>Question 5</h3></label>
           <p>Camping if the perfect vation option.</p>
           <select class="form-control widthControl" id="questionFive">
@@ -95,7 +114,7 @@
             <option value=5>5 (Strongly Disagree)</option>
           </select>
         </div>
-        <div class="form-group">
+        <div>
           <label for="questionSix"><h3>Question 6</h3></label>
           <p>I enjoy listening to others!</p>
           <select class="form-control widthControl" id="questionSix">
@@ -107,7 +126,7 @@
             <option value=5>5 (Strongly Disagree)</option>
           </select>
         </div>
-        <div class="form-group">
+        <div>
           <label for="questionSeven"><h3>Question 7</h3></label>
           <p>I prefer sweet to savory.</p>
           <select class="form-control widthControl" id="questionSeven">
@@ -119,7 +138,7 @@
             <option value=5>5 (Strongly Disagree)</option>
           </select>
         </div>
-        <div class="form-group">
+        <div>
           <label for="questionEight"><h3>Question 8</h3></label>
           <p>I actively try to be environmentally conscious.</p>
           <select class="form-control widthControl" id="questionEight">
@@ -131,7 +150,7 @@
             <option value=5>5 (Strongly Disagree)</option>
           </select>
         </div>
-        <div class="form-group">
+        <div>
           <label for="questionNine"><h3>Question 9</h3></label>
           <p>The more the merrier!</p>
           <select class="form-control widthControl" id="questionNine">
@@ -143,7 +162,7 @@
             <option value=5>5 (Strongly Disagree)</option>
           </select>
         </div>
-        <div class="form-group">
+        <div>
           <label for="questionTen"><h3>Question 10</h3></label>
           <p>I never met a puppy I didn't want to pet.</p>
           <select class="form-control widthControl" id="questionTen">
@@ -155,26 +174,16 @@
             <option value=5>5 (Strongly Disagree)</option>
           </select>
         </div>
-
-        <button type="submit" class="btn btn-primary" id="surveySubmit">Reveal Friend</button>
-
-      </form>
+      <!-- </form> -->
     </div>
-    <div class="row" id="friendDiv">
-      <h1>New Friend!</h1>
-      <h2 id="displayThis"></h2>
-      <div id="displayThisToo"></div>
-    </div>
+      <button type="button" data-toggle="modal" data-target="#friendModal" class="btn btn-primary" id="surveySubmit">Reveal Friend</button>
   </div>
 
 
   <script type="text/javascript">
 
   $("#surveySubmit").on("click", function(){
-    event.preventDefault();
 
-
-    $("#myModal").css("display", "block");
   		// Here we grab the form elements
       var q1v = $('#questionOne').val();
       var q2v = $('#questionTwo').val();
@@ -213,15 +222,15 @@
 
               var picURL = response.url
               console.log(response);
-              $("#surveyDiv").append("<div>")
               $("#displayThis").text(response.name);
               $("#displayThisToo").html("<img height='300px' src='"+picURL+"'/>");
-              // $("#viewFriend").css("display","inline");
+              $("#friendModal").modal()
+
 
           });
-        resetForm();
-      }
 
+      };
+      resetForm();
   return false;
 
   });
